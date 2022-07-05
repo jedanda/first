@@ -1,0 +1,12 @@
+<div class = "container">
+    <h2 class="title-lg mb">Все письма</h2>
+
+    <% @messages.each do |message| %>
+        <!-- <p>Письмо <%= message.id %></p> -->
+        <!-- <p> <%= link_to "Письмо #{message.id}","/messages/#{message.id}" %></p> -->
+        <!-- <p> <%= link_to "Письмо #{message.id}",message_path(message.id) %></p> -->
+        <p class="mb-sm"> <%= link_to "Письмо #{message.id}",message_path(message) %></p>
+    <% end %>
+
+    <p class="mt"><%= link_to "Создать новое письмо", new_message_path %></p>
+</div>

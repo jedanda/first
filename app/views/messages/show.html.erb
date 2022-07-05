@@ -1,0 +1,15 @@
+<div class = "container">
+    <h2 class="title-lg mb"> Письмо <%= @message.id%></h2>
+    <p class="mb-sm"> <%= @message.body%> </p>
+    <p>user_id: <b><%= @message.user_id%></b></p>
+    <!-- <p> <%= link_to "Вернуться ко всем отправленным письмам", "/messages"%> </p> -->
+
+
+    <p class="mt"> 
+        <%= link_to fa_icon('pencil'), edit_message_path(@message) %> 
+    </p>
+    <div> 
+        <%= button_to 'Удалить письмо', message_path(@message), method: :delete %>
+    </div>
+    <p class="mt"> <%= link_to "Вернуться ко всем отправленным письмам", messages_path%> </p>
+</div>
