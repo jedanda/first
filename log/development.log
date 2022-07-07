@@ -3083,3 +3083,704 @@ Processing by MessagesController#new as HTML
 Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 4853)
 
 
+Started GET "/messages" for ::1 at 2022-07-06 23:34:55 +0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20220706200638_create_articles.rb
+
+
+):
+  
+activerecord (7.0.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2022-07-06 23:35:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20220706200638)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220706200638"]]
+  [1m[36mTRANSACTION (51.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/messages" for ::1 at 2022-07-06 23:35:14 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 3602)
+  Rendered layout layouts/application.html.erb (Duration: 935.2ms | Allocations: 54447)
+Completed 200 OK in 1076ms (Views: 935.5ms | ActiveRecord: 1.8ms | Allocations: 57411)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-06 23:35:20 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 21.6ms | Allocations: 831)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 4660)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.2ms | Allocations: 6249)
+
+
+Started GET "/messages/8" for ::1 at 2022-07-06 23:35:24 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 529)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4306)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 5078)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:25 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4849)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 5140)
+
+
+Started GET "/messages/9" for ::1 at 2022-07-06 23:35:27 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 547)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 4322)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 0.3ms | Allocations: 5079)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:28 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4837)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.5ms | Allocations: 5118)
+
+
+Started GET "/messages/9" for ::1 at 2022-07-06 23:35:29 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 511)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4285)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.2ms | Allocations: 5042)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:34 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4834)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 5115)
+
+
+Started GET "/messages/8" for ::1 at 2022-07-06 23:35:35 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4312)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.4ms | Allocations: 5070)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:37 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4828)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 5109)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-06 23:35:37 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4313)
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 5071)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:39 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4878)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms | Allocations: 5159)
+
+
+Started GET "/messages/9" for ::1 at 2022-07-06 23:35:40 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4312)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 5069)
+
+
+Started DELETE "/messages/9" for ::1 at 2022-07-06 23:35:42 +0300
+Processing by MessagesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"9"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mMessage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (165.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+Redirected to http://localhost:3000/messages
+Completed 302 Found in 177ms (ActiveRecord: 166.3ms | Allocations: 2568)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:42 +0300
+Processing by MessagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4737)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 5067)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-06 23:35:43 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 127.2ms | Allocations: 2738)
+  Rendered layout layouts/application.html.erb (Duration: 139.2ms | Allocations: 6647)
+Completed 200 OK in 142ms (Views: 140.5ms | ActiveRecord: 0.0ms | Allocations: 7026)
+
+
+Started POST "/messages" for ::1 at 2022-07-06 23:35:51 +0300
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"text", "user_id"=>"3"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "text"], ["user_id", 3], ["created_at", "2022-07-06 20:35:51.659770"], ["updated_at", "2022-07-06 20:35:51.659770"]]
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (113.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+Redirected to http://localhost:3000/messages/10
+Completed 302 Found in 128ms (ActiveRecord: 114.5ms | Allocations: 2560)
+
+
+Started GET "/messages/10" for ::1 at 2022-07-06 23:35:51 +0300
+Processing by MessagesController#show as TURBO_STREAM
+  Parameters: {"id"=>"10"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4326)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.3ms | Allocations: 5134)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:35:54 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 913)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4904)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms | Allocations: 5188)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:40:20 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2574)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 18826)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.6ms | Allocations: 20197)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:47:06 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/messages/index.html.erb:4
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3143)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 19515)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.5ms | Allocations: 21197)
+
+
+Started GET "/messages" for ::1 at 2022-07-06 23:49:14 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4932)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 5235)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-07 00:54:16 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 173.0ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 205.2ms | Allocations: 4635)
+Completed 200 OK in 218ms (Views: 207.2ms | ActiveRecord: 1.5ms | Allocations: 6629)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-07 00:54:37 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1120)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4902)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 5252)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-07 01:13:51 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 65.1ms | Allocations: 4550)
+Completed 200 OK in 68ms (Views: 66.4ms | Allocations: 4827)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-07 01:13:54 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 767)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4557)
+Completed 200 OK in 12ms (Views: 10.9ms | Allocations: 4835)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:13:55 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/messages/index.html.erb:4
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1626)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5627)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 1.6ms | Allocations: 5906)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-07 01:13:58 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 758)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4550)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4834)
+
+
+Started GET "/messages/10" for ::1 at 2022-07-07 01:14:02 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4310)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.2ms | Allocations: 5092)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:14:05 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 35.5ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 4945)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms | Allocations: 5224)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:14:07 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4957)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 5235)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:19:57 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/messages/index.html.erb:4
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1626)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5582)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 5858)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:29:44 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/messages/index.html.erb:4
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2082)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6530)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 7357)
+
+
+Started GET "/messages/8" for ::1 at 2022-07-07 01:29:46 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 788)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4572)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 5453)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:29:48 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 986)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4966)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.2ms | Allocations: 5250)
+
+
+Started GET "/messages/8" for ::1 at 2022-07-07 01:29:53 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 523)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4311)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 5068)
+
+
+Started GET "/messages/8/edit" for ::1 at 2022-07-07 01:29:55 +0300
+Processing by MessagesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/edit.html.erb within layouts/application
+  Rendered messages/edit.html.erb within layouts/application (Duration: 74.2ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 79.5ms | Allocations: 4993)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.2ms | Allocations: 5804)
+
+
+Started GET "/messages/new" for ::1 at 2022-07-07 01:30:04 +0300
+Processing by MessagesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/new.html.erb within layouts/application
+  Rendered messages/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1011)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4844)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 5186)
+
+
+Started POST "/messages" for ::1 at 2022-07-07 01:30:12 +0300
+Processing by MessagesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>{"body"=>"", "user_id"=>""}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", ""], ["user_id", nil], ["created_at", "2022-07-06 22:30:12.940082"], ["updated_at", "2022-07-06 22:30:12.940082"]]
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (82.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:14:in `create'
+Redirected to http://localhost:3000/messages/11
+Completed 302 Found in 103ms (ActiveRecord: 83.5ms | Allocations: 2423)
+
+
+Started GET "/messages/11" for ::1 at 2022-07-07 01:30:13 +0300
+Processing by MessagesController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4317)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 5121)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 01:30:15 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1117)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5074)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 5355)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 11:04:06 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (24.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 5391)
+  Rendered layout layouts/application.html.erb (Duration: 529.0ms | Allocations: 47784)
+Completed 200 OK in 564ms (Views: 535.1ms | ActiveRecord: 1.2ms | Allocations: 51900)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-07 11:04:12 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 954)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4841)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 7660)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-07 11:04:21 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 520)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4301)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 5081)
+
+
+Started GET "/messages/7/edit" for ::1 at 2022-07-07 11:09:44 +0300
+Processing by MessagesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/edit.html.erb within layouts/application
+  Rendered messages/edit.html.erb within layouts/application (Duration: 157.9ms | Allocations: 11508)
+  Rendered layout layouts/application.html.erb (Duration: 175.4ms | Allocations: 15413)
+Completed 200 OK in 179ms (Views: 176.5ms | ActiveRecord: 0.1ms | Allocations: 16268)
+
+
+Started GET "/messages/7" for ::1 at 2022-07-07 11:29:28 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4342)
+Completed 200 OK in 20ms (Views: 12.1ms | ActiveRecord: 1.6ms | Allocations: 5786)
+
+
+Started DELETE "/messages/7" for ::1 at 2022-07-07 11:30:05 +0300
+Processing by MessagesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"7"}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mMessage Destroy (0.3ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+  [1m[36mTRANSACTION (93.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:33:in `destroy'
+Redirected to http://localhost:3000/messages
+Completed 302 Found in 103ms (ActiveRecord: 94.5ms | Allocations: 2817)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 11:30:05 +0300
+Processing by MessagesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 966)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 5016)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.5ms | Allocations: 5388)
+
+
+Started GET "/messages/8" for ::1 at 2022-07-07 11:30:07 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4325)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.3ms | Allocations: 5100)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 11:30:09 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4837)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.3ms | Allocations: 5118)
+
+
+Started GET "/messages/10" for ::1 at 2022-07-07 11:30:10 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4304)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 0.3ms | Allocations: 5061)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 11:30:12 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 4834)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.3ms | Allocations: 5115)
+
+
+Started GET "/messages/11" for ::1 at 2022-07-07 11:30:13 +0300
+Processing by MessagesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:61:in `set_message'
+  Rendering layout layouts/application.html.erb
+  Rendering messages/show.html.erb within layouts/application
+  Rendered messages/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 4324)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.3ms | Allocations: 5082)
+
+
+Started GET "/messages" for ::1 at 2022-07-07 11:30:14 +0300
+Processing by MessagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/messages/index.html.erb:4
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 4822)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 5103)
+
+

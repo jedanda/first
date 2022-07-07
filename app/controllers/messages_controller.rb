@@ -16,6 +16,7 @@ class MessagesController < ApplicationController
     redirect_to message_path(message)
     #render text: "Ваш запрос обработан"
   end
+  
   # обновление вопроса, который мы найдем по этому id
   def update
     #@message = Message.find(params[:id])
