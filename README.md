@@ -12,7 +12,7 @@
 
 app -> assets -> stylesheets описан код на css для придания элементам каждой страницы собственного дизайна. Используется в html.
 
-Для того, чтобы увидеть результат работы на собственном хосте (localhost3000/messages), необходимо запустить <raisl s> и перейти по адресу http://localhost:3000/messages
+Для того, чтобы увидеть результат работы на собственном хосте (localhost3000/messages), необходимо запустить `raisl s` и перейти по адресу http://localhost:3000/messages
 Можно попробовать запустить на сайте: https://docs.google.com/document/d/1C7iCYXFDulB-W32yeZ2mp1CEr3hiXpCbJkJHueLdVzE/edit
 
 Добавлены системные тесты, test->system->messages_tests.rb. <br/>
